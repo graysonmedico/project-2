@@ -2,5 +2,22 @@
 title: "Quarto 2"
 author: Grayson Medico
 format: html
+excute:
+    echo: false
 ---
 
+```{r}
+#| message: false
+#| warning: false
+#| echo: false
+
+library(tidyverse)
+library(palmerpenguins)
+
+penguins |> 
+  ggplot(aes(x = body_mass_g, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  labs(title = "Penguins Body Mass compared to Flipper Length", 
+       x = "Body Mass", 
+       y = "Flipper Length")
+```
